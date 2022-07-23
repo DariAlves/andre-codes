@@ -1,0 +1,151 @@
+/* ================ */
+/*     Variables    */
+/* ================ */
+:root {
+  --background-main: hsl(40, 9%, 93%);
+  --background-hover: hsla(0, 0%, 33%, 0.164);
+  --text-color-100: hsl(194, 13%, 20%);
+  --text-color-200: hsl(178, 14%, 55%);
+  --text-color-300: hsl(171, 67%, 21%);
+}
+
+/* ================ */
+/*      Reset       */
+/* ================ */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================ */
+/*  General Styles  */
+/* ================ */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color-100);
+}
+
+li {
+  list-style: none;
+}
+
+.container {
+  padding: 0 1rem;
+  width: 100%;
+  max-width: 120rem;
+  margin-inline: auto;
+}
+
+/* ================ */
+/*   Header Styles  */
+/* ================ */
+.header {
+  width: 100%;
+  height: 8rem;
+  background-color: var(--background-main);
+  position: sticky;
+  top: 0;
+  display: flex;
+}
+
+.header__logo {
+  font-size: 2rem;
+}
+
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav {
+  display: none;
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav__link {
+  position: relative;
+  padding: 0 1rem;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  transition: all 0.3s ease;
+}
+
+.nav__link::after {
+  position: absolute;
+  content: '';
+  width: 0%;
+  height: 3px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--text-color-200);
+  transition: all 0.4s ease;
+}
+
+.nav__link::before {
+  position: absolute;
+  content: '';
+  width: 0%;
+  height: 3px;
+  top: -5px;
+  right: 0;
+  background-color: var(--text-color-200);
+  transition: all 0.4s ease;
+}
+
+.nav__link:hover {
+  color: var(--text-color-200);
+}
+
+.nav__link:hover::after,
+.nav__link:hover::before {
+  width: 50%;
+  height: 32px;
+  background-color: var(--background-hover);
+}
+
+.nav__link--active {
+  color: var(--text-color-300);
+}
+
+.nav__link--active::after,
+.nav__link--active::before {
+  padding: 0 50%;
+}
+
+/* ================ */
+/*  Media Queries   */
+/* ================ */
+@media (min-width: 640px) {
+  .nav {
+    display: block;
+  }
+}
