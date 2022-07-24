@@ -279,7 +279,7 @@ li {
 /*    Hero Styles   */
 /* ================ */
 .hero {
-  background: url('assets/img/hero-1.jpg') no-repeat left 80% top -50px;
+  background: url('img/hero-1.jpg') no-repeat left 80% top -50px;
   background-size: cover;
   height: 100vh;
 }
